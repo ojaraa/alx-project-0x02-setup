@@ -1,28 +1,48 @@
-import Card from "@/components/common/Card";
-
+import { useState } from "react";
+import Card from "../components/common/Card";
+import PostModal, { Post } from "../components/common/PostModal";
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [posts, setPosts] = useState<Post[]>([]);
+    
+    const handleAddPost = (post: Post) => {
+    setPosts((prevPosts) => [...prevPosts, post]);
+  };
   return (
-   
     <>
-     <h1>Property Listing Page</h1>
-      <div className="grid grid-cols-4 gap-7">
-          {airbnbMockCards?.map((card) => (
-            <Card
-              tags={card?.tags}
-              title={card?.title}
-              description={card?.location}
-              content={card?.content}
-              imageUrl={card?.image}
-              key={card?.id}
-            />
-          ))}
-        </div>
-    </>
-  )
-}
+      <h1>Property Listing Page</h1>
 
-export default Home
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        Add New Post
+      </button>
+
+    <PostModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSubmit={handleAddPost}
+      />
+
+      <div className="grid grid-cols-4 gap-7">
+        {airbnbMockCards?.map((card) => (
+          <Card
+            tags={card?.tags}
+            title={card?.title}
+            description={card?.location}
+            content={card?.content}
+            imageUrl={card?.image}
+            key={card?.id}
+          />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Home;
 
 export const airbnbMockCards = [
   {
