@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [".next/next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["alx-project-0x02/node_modules"]
 }
