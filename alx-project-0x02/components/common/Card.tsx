@@ -1,7 +1,9 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardProps } from "../../interfaces";
+// import { CardProps } from "../../interfaces";
+import { type CardProps } from "../../interfaces";
+
 
 
 const Card = ({title, content, tags} : CardProps) => {
