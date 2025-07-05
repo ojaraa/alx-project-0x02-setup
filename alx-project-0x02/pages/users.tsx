@@ -28,6 +28,7 @@ const UsersPage = ({ users }: UsersPageProps) => {
     </>
   );
 };
+getStaticProps()
 
 export const getStaticProps = async () => {
   try {
