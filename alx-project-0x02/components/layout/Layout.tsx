@@ -1,4 +1,4 @@
-import Header from "./Header";
+// import Header from "./Header";
 // import Footer from "./Footer";
 import React from "react";
 
@@ -9,7 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className="min-h-screen">{children}</main>
       {/* <Footer /> */}
     </>

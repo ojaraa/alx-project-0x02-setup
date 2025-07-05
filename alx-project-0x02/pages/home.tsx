@@ -1,16 +1,18 @@
 import { useState } from "react";
 import Card from "../components/common/Card";
 import PostModal, { Post } from "../components/common/PostModal";
+import Header from "../components/layout/Header";
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
     const [posts, setPosts] = useState<Post[]>([]);
-    
+
     const handleAddPost = (post: Post) => {
     setPosts((prevPosts) => [...prevPosts, post]);
   };
   return (
     <>
+         <Header />
       <h1>Property Listing Page</h1>
 
       <button
