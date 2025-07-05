@@ -1,8 +1,17 @@
+import Button from "../components/common/Button"
 
 
 const About = () => {
   return (
-    <h1>About</h1>
+    <>
+    About
+        <div className="flex gap-4 flex-wrap">
+        <Button size="small" shape="rounded-sm">Small Rounded-sm</Button>
+        <Button size="medium" shape="rounded-md">Medium Rounded-md</Button>
+        <Button size="large" shape="rounded-full">Large Rounded-full</Button>
+      </div>
+
+  </>
   )
 }
 
